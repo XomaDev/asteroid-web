@@ -49,10 +49,10 @@ def command_scrape(commandsText):
                 if command.startswith("->"):
                     index = command.split('!')[0][2:]
                     command = command.split('!')[1]
-                    result = result + '```\n' + findData(bsSoup, command, True)[int(index) - 1].getText() + '\n```'
+                    result = result + findData(bsSoup, command, True)[int(index) - 1].getText()
                 elif command.startswith(">"):
                     command = command[2:]
-                    result = result + '```\n' + findData(bsSoup, command, False) + '\n```'
+                    result = result + findData(bsSoup, command, False)
                 else:
                     result = 'Invalid command at line:  ' + str(i + 2)
                     break
